@@ -1,0 +1,22 @@
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    /*!* 3:, 4: *!*/
+    -fx-background-color:#eb4d4d;
+    -fx-text-fill: #eb4d4d;
+}
+
+.list-cell { -fx-background-color: #000000;}
+
+
+.scroll-bar{
+    -fx-background-color: #000000;
+    -fx-opacity: 0.2;
+}
+
+
+
+
+/*.list-cell:filled:hover {*/
+    /*-fx-background-color: #00f; !* 2 *!*/
+    /*-fx-text-fill: white; !* 5 *!*/
+/*}*/
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #393e46;" fx:controller="Client.MsgBox2Controller" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView disable="true" fitHeight="276.0" fitWidth="495.0" layoutX="-148.0" layoutY="-70.0" opacity="0.71" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bg1.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="context" fill="#ffc3ea" layoutX="60.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="200.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="50.0" layoutY="128.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: #222831;" text="Yes" onMouseClicked="#yesClick" textFill="#f0601a" />
+      <Button layoutX="161.0" layoutY="128.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" style="-fx-background-color: #222831;" text="No" onMouseClicked="#noClick" textFill="#f0601a" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="47.0" layoutX="-10.0" layoutY="14.0" opacity="0.93" stroke="BLACK" strokeType="INSIDE" width="314.0" />
+      <Label fx:id="title" layoutX="127.0" layoutY="24.0" textFill="#f05b16">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

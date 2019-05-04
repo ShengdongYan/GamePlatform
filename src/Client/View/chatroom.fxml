@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="1" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #222831;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.ChatController">
+   <children>
+      <ImageView fitHeight="450.0" fitWidth="800.0" opacity="1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bg1.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" height="450.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="155.0">
+         <fill>
+            <LinearGradient endX="0.031175059952038287" endY="0.7793764988009593" startX="0.7601918465227819" startY="0.7769784172661872">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#eb4d4d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label fx:id="usernameLabel" layoutX="17.0" layoutY="170.0" prefHeight="29.0" prefWidth="119.0" text="Username" textFill="#ffc8c8">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="profileBtn" alignment="CENTER_RIGHT" layoutY="244.0" mnemonicParsing="false" onMouseClicked="#goProfilePage" opacity="0.2" prefHeight="38.0" prefWidth="155.0" style="-fx-background-color: #000000;" textAlignment="RIGHT" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="profileLb" disable="true" layoutX="63.0" layoutY="250.0" opacity="0.7" text="Profile" textFill="#ffd7d7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="settingBtn" alignment="CENTER_RIGHT" layoutX="1.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#goSettingPage" opacity="0.22" prefHeight="38.0" prefWidth="155.0" style="-fx-background-color: #000000;" text=" " textAlignment="RIGHT" textFill="#ff7700">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="settingLb" disable="true" layoutX="59.0" layoutY="336.0" opacity="0.7" text="Setting" textFill="#ffd7d7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="shopBtn" alignment="CENTER_RIGHT" layoutX="-1.0" layoutY="286.0" mnemonicParsing="false" onMouseClicked="#goShopPage" opacity="0.2" prefHeight="38.0" prefWidth="155.0" style="-fx-background-color: #000000;" textAlignment="RIGHT" textFill="#f86c6c">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="shopLb" disable="true" layoutX="68.0" layoutY="294.0" opacity="0.7" text="Shop" textFill="#ffd7d7">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="19.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon/icon1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="7.0" layoutY="294.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MenuIcon/ShopIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="7.0" layoutY="250.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MenuIcon/setting.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="23.0" fitWidth="23.0" layoutX="7.0" layoutY="336.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MenuIcon/profile.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="chatPane" layoutX="155.0" prefHeight="450.0" prefWidth="645.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="450.0" layoutX="525.0" opacity="0.8" stroke="TRANSPARENT" strokeType="INSIDE" width="120.0">
+               <fill>
+                  <LinearGradient endX="0.9088729016786571" endY="1.0" startX="0.24460431654676262" startY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#eb4d4d" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <ListView id="gameListView" fx:id="gameList" layoutX="3.0" layoutY="10.0" opacity="0.85" orientation="HORIZONTAL" prefHeight="57.0" prefWidth="519.0" style="-fx-background-color: #000000;" stylesheets="@listStyle.css" />
+            <ListView fx:id="chatArea" layoutX="174.0" layoutY="72.0" opacity="0.7" prefHeight="247.0" prefWidth="348.0" style="-fx-background-color: #000000;" stylesheets="@listStyle.css" />
+      
+            <TextArea fx:id="inputArea" layoutX="174.0" layoutY="321.0" onKeyReleased="#sendByKeyboard" opacity="0.7" prefHeight="122.0" prefWidth="348.0" style="-fx-background-color: #393E46;" wrapText="true" />
+            <ListView fx:id="contactList" layoutX="3.0" layoutY="72.0" opacity="0.85" prefHeight="371.0" prefWidth="168.0" style="-fx-background-color: #000000;" stylesheets="@listStyle.css" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" disable="true" fill="#ffaa00" height="122.0" layoutX="174.0" layoutY="322.0" opacity="0.33" stroke="BLACK" strokeType="INSIDE" width="348.0" />
+            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="441.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@MenuIcon/emoji.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="57.0" fitWidth="31.0" layoutX="482.0" layoutY="406.0" onMouseClicked="#sendMessage" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@MenuIcon/sendMsg.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="40.0" layoutX="395.0" layoutY="405.0" onMouseClicked="#startNewGame" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+               <image>
+                  <Image url="@MenuIcon/startGame.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <GridPane fx:id="profilePane" layoutX="155.0" prefHeight="450.0" prefWidth="645.0" visible="false">
+         <children>
+            <Rectangle GridPane.rowSpan="4" GridPane.columnSpan="3" arcHeight="5.0" arcWidth="5.0" height="450.0" opacity="0.8" stroke="TRANSPARENT" strokeType="INSIDE" width="645.0">
+               <fill>
+                  <LinearGradient endX="0.6426858513189448" endY="0.985611510791367" startY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#ed4b4b" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" layoutX="260.0" layoutY="14.0" prefHeight="75.0" text="Profile Will Be Added Soon...">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.2685851318944844" startY="0.7458033573141487">
+                     <stops>
+                        <Stop color="#ffc0d3" />
+                        <Stop color="#ffc0d3" offset="0.0074487895716946" />
+                        <Stop color="#e8e5b7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ImageView fitHeight="23.0" fitWidth="29.0" layoutX="10.0" layoutY="3.0" onMouseClicked="#backToChat" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@backIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints maxWidth="629" minWidth="92" prefWidth="158"/>
+            <ColumnConstraints maxWidth="629" minWidth="0" prefWidth="298"/>
+            <ColumnConstraints maxWidth="563" minWidth="10" prefWidth="190"/>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="213" minHeight="10" prefHeight="34"/>
+            <RowConstraints maxHeight="213" minHeight="10" prefHeight="126"/>
+            <RowConstraints maxHeight="446" minHeight="88" prefHeight="169"/>
+            <RowConstraints maxHeight="446" minHeight="143" prefHeight="143"/>
+         </rowConstraints>
+      </GridPane>
+      <GridPane alignment="CENTER_RIGHT" fx:id="shopPane" layoutX="155.0" prefHeight="450.0" prefWidth="645.0" visible="false">
+         <children>
+            <Rectangle GridPane.rowSpan="4" GridPane.columnSpan="3" arcHeight="5.0" arcWidth="5.0" height="450.0" opacity="0.8" stroke="TRANSPARENT" strokeType="INSIDE" width="645.0">
+               <fill>
+                  <LinearGradient endX="0.6426858513189448" endY="0.985611510791367" startY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#ed4b4b" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" layoutX="260.0" layoutY="14.0" prefHeight="75.0" text="Shop Will Be Added Soon...">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.2685851318944844" startY="0.7458033573141487">
+                     <stops>
+                        <Stop color="#ffc0d3" />
+                        <Stop color="#ffc0d3" offset="0.0074487895716946" />
+                        <Stop color="#e8e5b7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ImageView fitHeight="23.0" fitWidth="29.0" layoutX="10.0" layoutY="3.0" onMouseClicked="#backToChat" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@backIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints maxWidth="629" minWidth="92" prefWidth="158"/>
+            <ColumnConstraints maxWidth="629" minWidth="0" prefWidth="298"/>
+            <ColumnConstraints maxWidth="563" minWidth="10" prefWidth="190"/>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="213" minHeight="10" prefHeight="34"/>
+            <RowConstraints maxHeight="213" minHeight="10" prefHeight="126"/>
+            <RowConstraints maxHeight="446" minHeight="88" prefHeight="169"/>
+            <RowConstraints maxHeight="446" minHeight="143" prefHeight="143"/>
+         </rowConstraints>
+      </GridPane>
+      <GridPane alignment="CENTER" fx:id="settingPane" layoutX="155.0" prefHeight="450.0" prefWidth="645.0" visible="false">
+         <children>
+            <Rectangle GridPane.rowSpan="4" GridPane.columnSpan="3" arcHeight="5.0" arcWidth="5.0" height="450.0" opacity="0.8" stroke="TRANSPARENT" strokeType="INSIDE" width="645.0">
+               <fill>
+                  <LinearGradient endX="0.6426858513189448" endY="0.985611510791367" startY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#ed4b4b" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.halignment="CENTER" layoutX="260.0" layoutY="14.0" prefHeight="75.0" text="Setting Will Be Added Soon...">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.2685851318944844" startY="0.7458033573141487">
+                     <stops>
+                        <Stop color="#ffc0d3" />
+                        <Stop color="#ffc0d3" offset="0.0074487895716946" />
+                        <Stop color="#e8e5b7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <ImageView fitHeight="23.0" fitWidth="29.0" layoutX="10.0" layoutY="3.0" onMouseClicked="#backToChat" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@backIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints maxWidth="629" minWidth="92" prefWidth="158"/>
+            <ColumnConstraints maxWidth="629" minWidth="0" prefWidth="298"/>
+            <ColumnConstraints maxWidth="563" minWidth="10" prefWidth="190"/>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="213" minHeight="10" prefHeight="34"/>
+            <RowConstraints maxHeight="213" minHeight="10" prefHeight="126"/>
+            <RowConstraints maxHeight="446" minHeight="88" prefHeight="169"/>
+            <RowConstraints maxHeight="446" minHeight="143" prefHeight="143"/>
+         </rowConstraints>
+      </GridPane>
+      <ImageView fitHeight="29.0" fitWidth="23.0" layoutX="775.0" layoutY="3.0" onMouseClicked="#quit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@MenuIcon/backIcon.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

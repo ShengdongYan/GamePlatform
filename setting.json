@@ -1,0 +1,5 @@
+{
+  "sql_url": "jdbc:postgresql://mod-msc-sw1.cs.bham.ac.uk:5432/group9",
+  "sql_password": "p61s32do5p",
+  "sql_usr": "group9"
+}

@@ -1,0 +1,9 @@
+
+
+{
+
+    "sql_url": "jdbc:postgresql://mod-fund-databases.cs.bham.ac.uk:5432/bxs863",
+    "sql_password": "d15837993682",
+    "sql_usr": "bxs863"
+
+}
