@@ -1,7 +1,7 @@
 # A tiny gameplatform based on Java and JavaFX
 ---
 
-## 这是一次在伯明翰大学CS读研期间的大作业。
+## 这是一次在伯明翰大学CS读研期间的大作业。(上边的文件中包含了演讲的PPT和report文档)
 
 **项目成品可以简单概述为 基于Java和JavaFX的简易版网络对战平台。**
 
